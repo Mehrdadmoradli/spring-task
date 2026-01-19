@@ -3,6 +3,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.PrePersist;
 import java.time.LocalDateTime;
 
 
@@ -52,6 +53,10 @@ public class Task {
 	}
 	public void setDueDate(LocalDateTime dueDate) {
 		this.dueDate = dueDate;
+	}
+	@PrePersist
+	public void onCreate() {
+		this.createdAt = LocalDateTime.now();
 	}
 	
 	@Override
