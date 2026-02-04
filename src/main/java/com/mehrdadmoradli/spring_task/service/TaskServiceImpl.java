@@ -34,8 +34,8 @@ public class TaskServiceImpl implements TaskService {
 	}
 	@Override 
 	public boolean deleteTask(Long id) {
-		Task task = readTask(id);
 		taskRepository.deleteById(id);
 		return true;
+
 	}
 }
