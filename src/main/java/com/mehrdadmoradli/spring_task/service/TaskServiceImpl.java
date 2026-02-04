@@ -2,10 +2,13 @@ package com.mehrdadmoradli.spring_task.service;
 import com.mehrdadmoradli.spring_task.entity.Task;
 import com.mehrdadmoradli.spring_task.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.Optional;
 import java.util.List;
 import java.util.ArrayList;
 
+
+@Service
 public class TaskServiceImpl implements TaskService {
 	@Autowired
 	public TaskRepository taskRepository;
@@ -34,6 +37,7 @@ public class TaskServiceImpl implements TaskService {
 	}
 	@Override 
 	public boolean deleteTask(Long id) {
+		Task task = readTask(id);
 		taskRepository.deleteById(id);
 		return true;
 
