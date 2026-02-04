@@ -1,5 +1,5 @@
 package com.mehrdadmoradli.spring_task.controller;
-import com.mehrdadmoradli.spring_task.service.TaskService;
+import com.mehrdadmoradli.spring_task.service.TaskServiceImpl;
 import com.mehrdadmoradli.spring_task.entity.Task;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 @RequestMapping("/tasks")
 public class TaskController {
 	@Autowired
-	TaskService service;
+	TaskServiceImpl service;
 	
 	@PostMapping
 	public Task postTask(@RequestBody Task task) {
